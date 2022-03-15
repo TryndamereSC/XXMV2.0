@@ -22,27 +22,15 @@ from Business.common import MyTools
 
 mt = MyTools()
 
-
-def test_findCallLogList_44():
+def test_get_result_53():
 
     query_params = {
+        "biz_uni_key": mt.get_robot_dict()['biz_uni_key'],
         "access_token": mt.get_token(),
-        "startTime": mt.startTime(),
-        "endTime": mt.endTime(),
-        "offset": 1,
-        "limit": 10,
-        "order": "",
-        "businessId": mt.get_robot_dict()['bizId'],
-        "bank_org" : ""
-
+        "with_default" : 0
     }
-    r = requests.get(url=mt.data_url + "/v1/robot/report/findCallLogList", params=query_params)
+    r = requests.get(url=mt.data_url + "/v1/robot/robot_result_status/get_result", params=query_params)
     print(r.json())
-    print(mt.startTime())
-    print(mt.endTime())
     with check:
         assert r.status_code == 200
-        # assert r.json()['code'] == 20000   部分场景没有拨打详情
-
-
-
+        assert r.json()['code'] == 20000 or 20003

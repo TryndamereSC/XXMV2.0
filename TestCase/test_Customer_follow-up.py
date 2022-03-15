@@ -16,7 +16,7 @@ mt = MyTools()
 
 
 @allure.feature('主页面客户跟进列表')
-def test_robot_crm_biz_list():
+def test_robot_crm_biz_list_148():
     query_params = {
         "access_token": mt.get_token(),
         "query": "",
@@ -35,7 +35,7 @@ def test_robot_crm_biz_list():
 
 
 @allure.story('主页面客户跟进搜索')
-def test_robot_biz_list():
+def test_robot_biz_list_149():
     query_params = {
         "access_token": mt.get_token(),
         "query": "建行",
@@ -54,7 +54,7 @@ def test_robot_biz_list():
 
 
 @allure.story('场景内客户列表展示')
-def test_robot_crm_list():
+def test_robot_crm_list_150():
     query_params ={
         "access_token" : mt.get_token(),
         "page" : 1,
@@ -70,7 +70,7 @@ def test_robot_crm_list():
 
 
 @allure.story('直营银行-短信发送')
-def test_send_shortmsg():
+def test_send_shortmsg_151():
     query_params = {
         "access_token" : mt.get_token(),
         "receiver" : 16657121119,
@@ -85,7 +85,7 @@ def test_send_shortmsg():
 
 
 @allure.story('客户属性列表')
-def test_customer_attr_list():
+def test_customer_attr_list_152():
     query_params = {
         "access_token": mt.get_token(),
 
@@ -98,7 +98,7 @@ def test_customer_attr_list():
 
 
 @allure.story('客户详情')
-def test_contact_log_list():
+def test_contact_log_list_153():
     query_params = {
         "access_token": mt.get_token(),
         "page" : 1,

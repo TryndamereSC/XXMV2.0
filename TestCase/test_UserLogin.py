@@ -78,7 +78,7 @@ def test_uesrLogin_03():
     print(r.json())
     with check:
         assert r.status_code == 200
-        assert r.json()['message'] == '用户未启用'
+        assert r.json()['message'] == '用户不存在'
 
 
 

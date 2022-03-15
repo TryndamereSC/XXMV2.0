@@ -130,12 +130,10 @@ class MyTools(Parameter):
         """获取data_source_batch_id（批次编号ID）"""
         query_params = {
             "access_token" : self.get_token(),
-            "business_id" : self.get_robot_dict()['bizId'],
             "pageSize" : 10,
             "page" : 1,
-            "orderBy" : "time_create desc",
-            "is_join_call_plan" : 1,
-            "is_complete" : ""
+            "orderBy" : "time_create desc"
+
         }
         r1 = requests.get(url=self.data_url+"/v1/oper/datasource/getDataSourceBatchList",params=query_params)
 
@@ -149,6 +147,8 @@ class MyTools(Parameter):
             return message
 
         return "未获取到接口参数，请检查"
+
+
 
     def test_list_biz(self):
         """获取biz_id"""
@@ -534,8 +534,8 @@ if __name__ == '__main__':
     # print(token)
     # biz_uni_key = test.get_robot_dict()
     # print(biz_uni_key)
-    # id = test.getDataSourceBatchList()
-    # print("id-->",id)
+    id = test.getDataSourceBatchList()
+    print("id-->",id)
     # biz_id = test.test_list_biz()
     # print(biz_id)
     # bank_id =test.test_entry_bank_list()
@@ -556,9 +556,9 @@ if __name__ == '__main__':
     #
     # org_code = test.bank_org_code
     # print(org_code)
-    # bank_code = test.bank_org_code
-    # print(bank_code)
-    # print(str(bank_code[0]))
+    bank_code = test.bank_org_code
+    print(bank_code)
+    print(str(bank_code[0]))
     #
     #
     # equipment_id = test.test_getVoiceDeviceList_128()
